@@ -1,21 +1,32 @@
 package com.rodrick.gulu.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
-@Table(name="skills")
+@Table(name = "skills")
 public class Skills {
+
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
+
+    @Column(name = "clients")
     private int clients;
+
+    @Column(name = "bids")
     private int bids;
+
+    @Column(name = "completed")
     private int completed;
+
+    @Column(name = "ongoing")
     private int ongoing;
+
+    @Column(name = "hours")
     private int hours;
+
+    // Getters and setters
 
     public Long getId() {
         return id;

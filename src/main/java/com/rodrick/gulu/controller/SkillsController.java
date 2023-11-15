@@ -12,6 +12,7 @@ import java.util.List;
 @CrossOrigin("https://rodrickgulu.github.io/RodrickGulu/")
 @RequestMapping("/rodrick")
 public class SkillsController {
+
     @Autowired
     private SkillsRepository skillsRepository;
 

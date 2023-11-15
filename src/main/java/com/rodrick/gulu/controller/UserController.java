@@ -9,33 +9,34 @@ import org.springframework.web.bind.annotation.*;
 import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.List;
-import java.util.Optional;
-import java.util.Random;
+
 @CrossOrigin("https://rodrickgulu.github.io/RodrickGulu/")
 @RestController
 @RequestMapping("/rodrick")
-public class UserController{
+public class UserController {
+
     @Autowired
-    private UserRepository repo;
+    private UserRepository userRepository;
 
     @PostMapping("/addComment")
     public ResponseEntity<User> addComment(@RequestBody User user) throws IOException {
         user.setDate(LocalDateTime.now());
-        if(user.getName() == null) {
+        if (user.getName() == null) {
             user.setName("Anonymous");
         }
-        if(user.getEmail() == null) {
+        if (user.getEmail() == null) {
             user.setEmail("anonymous@email");
         }
         user.setEmail(user.getEmail());
         user.setName(user.getName());
         user.setMessage(user.getMessage());
 
-        repo.save(user);
+        userRepository.save(user);
         return ResponseEntity.ok(user);
     }
+
     @GetMapping("/comments")
     public List<User> getComments() {
-        return repo.findAll();
+        return userRepository.findAll();
     }
 }

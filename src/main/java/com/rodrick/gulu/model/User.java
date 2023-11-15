@@ -5,18 +5,30 @@ import jakarta.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name="comments")
+@Table(name = "comments")
 public class User {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
+
+    @Column(name = "name")
     private String name;
+
+    @Column(name = "email")
     private String email;
+
+    @Column(name = "message")
     private String message;
+
+    @Column(name = "date")
     private LocalDateTime date;
 
-    public String getId() {
-        return id.toString();
+    // Getters and setters
+
+    public Long getId() {
+        return id;
     }
 
     public void setId(Long id) {
@@ -47,12 +59,11 @@ public class User {
         this.message = message;
     }
 
-    public String getDate() {
-        return date.toString();
+    public LocalDateTime getDate() {
+        return date;
     }
 
     public void setDate(LocalDateTime date) {
         this.date = date;
     }
 }
-

@@ -1,0 +1,13 @@
+com\rodrick\gulu\GuluApplication.class
+com\rodrick\gulu\model\Quotes.class
+com\rodrick\gulu\repository\UserRepository.class
+com\rodrick\gulu\model\Enquiries.class
+com\rodrick\gulu\controller\SkillsController.class
+com\rodrick\gulu\repository\SkillsRepository.class
+com\rodrick\gulu\controller\QuotesController.class
+com\rodrick\gulu\repository\QuotesRepository.class
+com\rodrick\gulu\controller\UserController.class
+com\rodrick\gulu\model\User.class
+com\rodrick\gulu\repository\EnquiriesRepository.class
+com\rodrick\gulu\controller\EnquiriesController.class
+com\rodrick\gulu\model\Skills.class

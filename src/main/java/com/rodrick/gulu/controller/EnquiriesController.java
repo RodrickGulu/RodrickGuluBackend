@@ -12,17 +12,18 @@ import java.util.List;
 @RequestMapping("/rodrick")
 @CrossOrigin("https://rodrickgulu.github.io/RodrickGulu")
 public class EnquiriesController {
+
     @Autowired
     private EnquiriesRepository enquiriesRepository;
 
     @PostMapping("/postEnquiry")
-    public ResponseEntity<Enquiries> getEnquiries(@RequestBody Enquiries enquiries){
-        enquiriesRepository.save(enquiries);
-        return ResponseEntity.ok(enquiries);
+    public ResponseEntity<Enquiries> postEnquiry(@RequestBody Enquiries enquiry) {
+        enquiriesRepository.save(enquiry);
+        return ResponseEntity.ok(enquiry);
     }
 
-    @GetMapping("/getEnquiry")
-    public List<Enquiries> getEnquiries(){
+    @GetMapping("/getEnquiries")
+    public List<Enquiries> getEnquiries() {
         return enquiriesRepository.findAll();
     }
 }
