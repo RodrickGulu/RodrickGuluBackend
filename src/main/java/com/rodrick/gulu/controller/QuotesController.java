@@ -1,7 +1,9 @@
 package com.rodrick.gulu.controller;
 
 import com.rodrick.gulu.model.Quotes;
+import com.rodrick.gulu.model.Skills;
 import com.rodrick.gulu.repository.QuotesRepository;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -26,5 +28,11 @@ public class QuotesController {
     public Integer getNumberOfQuotes() {
         List<Quotes> quotesList = quotesRepository.findAll();
         return quotesList.size();
+    }
+
+    @PostMapping("/postQuotes")
+    public ResponseEntity<Quotes> postSkills(@RequestBody Quotes quotes) {
+        quotesRepository.save(quotes);
+        return ResponseEntity.ok(quotes);
     }
 }
